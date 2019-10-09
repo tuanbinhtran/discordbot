@@ -12,5 +12,9 @@ export module App {
 
     client.on('message', message => {
         console.log(message.content);
+
+        if (message.content === '!ping') {
+            message.channel.send('Pong.');
+        }
     });
 }

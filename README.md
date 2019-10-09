@@ -1,4 +1,7 @@
-"# discordbot" 
+"# discordbot"
+
+
+# 🚩 Configuration
 
 config.ts is required:
 
@@ -11,4 +14,21 @@ export const config = {
     clientSecret: ''
 }
 ```
+---
+
+# 🏁 Start
+
+Run with watch:
+```console
+npm start
+```
+
+Run **without** watch:
+```console
+npm run now
+```
+
+
+
+
 
