@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/tuanbinhtran/discordbot#readme",
   "dependencies": {
+    "@types/node": "^12.7.12",
     "discord.js": "^11.5.1",
     "ts-node-dev": "^1.0.0-pre.43"
   },
