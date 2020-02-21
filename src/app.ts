@@ -1,21 +1,21 @@
-import Discord from 'discord.js';
-import { config, token, prefix } from "../config";
+import { Client, Message } from 'discord.js';
+import { config } from "../config";
 
 export class App {
-    client: Discord.Client;
+    client: Client;
     command: string;
     args: string[];
 
     constructor() { }
 
     initializeApp() {
-        this.client = new Discord.Client();
+        this.client = new Client();
 
         this.client.once('ready', () => {
             console.info('READY!')
         });
 
-        this.client.login(token);
+        this.client.login(config.token);
 
         this.client.on('message', message => {
             this.setArgumentsAndCommand(message);
@@ -46,13 +46,13 @@ export class App {
         });
     }
 
-    private setArgumentsAndCommand(message: Discord.Message): void {
-        this.args = message.content.slice(prefix.length).split(/ +/);
+    private setArgumentsAndCommand(message: Message): void {
+        this.args = message.content.slice(config.prefix.length).split(/ +/);
         this.command = this.args.shift().toLowerCase();
     }
 
-    private isPrefix(message: Discord.Message): boolean {
-        if (!(message.content.charAt(0) === prefix))
+    private isPrefix(message: Message): boolean {
+        if (!(message.content.charAt(0) === config.prefix))
             return false;
         this.removePrefix(message);
         // console.log(message.content);
@@ -60,7 +60,7 @@ export class App {
         return true;
     }
 
-    private removePrefix(message: Discord.Message): void {
+    private removePrefix(message: Message): void {
         if (message.content.startsWith('!'))
             message.content = message.content.replace('!', '');
     }
