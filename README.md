@@ -14,7 +14,6 @@ export const config = {
     clientSecret: ''
 }
 ```
----
 
 # 🏁 Code
 
@@ -26,7 +25,7 @@ npm i
 2. Assume config.ts unchanged
 ```console
 git update-index --assume-unchanged ./config.ts
-``
+```
 
 
 # 👨🏿‍🦽 Running
